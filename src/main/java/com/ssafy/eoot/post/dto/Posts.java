@@ -15,7 +15,8 @@ import java.util.List;
 public class Posts {
     // TODO : Member DTO 생성 시 외래 키 필드 추가
     @Id @GeneratedValue
-    private int postId;
+    @Column(name = "post_id")
+    private Long id;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id")

@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @Data
 public class PostLocations {
     @Id
-    private int locationId;
+    private Long locationId;
 
     @NotBlank
     private String sigungu;

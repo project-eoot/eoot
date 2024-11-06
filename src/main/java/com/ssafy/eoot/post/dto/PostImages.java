@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 public class PostImages {
     // TODO : 이미지 타입 필드 회의 완료 후 추가
     @Id
-    private int imageId;
+    private Long imageId;
 
     @NotBlank
     private String originName;

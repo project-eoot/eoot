@@ -9,7 +9,7 @@ import lombok.Data;
 public class Comments {
     // TODO : User DTO 만들어지면 외래 키 추가
     @Id @GeneratedValue
-    private int commentId;
+    private Long commentId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Posts post;
