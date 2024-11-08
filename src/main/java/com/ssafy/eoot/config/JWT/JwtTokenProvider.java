@@ -77,5 +77,11 @@ public class JwtTokenProvider {
         }
     }
 
+    public Boolean validateToken(String token, String memberId) {
+        try {
 
+        } catch (ExpiredJwtException e) {
+            logger.error("토큰 유효기간이 지나 만료됨. 다시 로그인 필요.");
+        }
+    }
 }
