@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Likes {
+public class Like {
     // TODO : User DTO 만들어지면 외래 키 추가
     @ManyToOne(fetch = FetchType.LAZY)
     @Id @JoinColumn(name = "post_id")
-    private Posts post;
+    private Post post;
 }

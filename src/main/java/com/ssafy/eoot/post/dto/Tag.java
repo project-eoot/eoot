@@ -6,10 +6,10 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Tags {
+public class Tag {
     @Id @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")
-    private Posts post;
+    private Post post;
 
     @NotBlank
     private String content;

@@ -2,7 +2,6 @@ package com.ssafy.eoot.post.dto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -10,7 +9,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
-public class PostLocations {
+public class PostLocation {
     @Id
     private Long locationId;
 
