@@ -8,7 +8,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
-public class CORSConfig {
+public class CorsConfig {
 
     @Value("${client.base-url}")
     private  String clientBaseUrl;
