@@ -12,13 +12,13 @@ public class ResponseDto {
     private Integer customCode;
     private Object data;
 
-    public static ResponseEntity<?> success(Object o) {
+    public static ResponseEntity<?> success(Object o, int customCode) {
         return ResponseEntity
                 .status(200)
                 .body(ResponseDto.builder()
                         .result(true)
                         .data(o)
-                        .customCode(2000)
+                        .customCode(customCode)
                         .build());
     }
 
