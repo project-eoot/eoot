@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Data
 public class Post {
-    // TODO : Member DTO 생성 시 외래 키 필드 추가
+    // TODO: Member DTO 생성 시 외래 키 필드 추가
     @Id @GeneratedValue
     @Column(name = "post_id")
     private Long id;

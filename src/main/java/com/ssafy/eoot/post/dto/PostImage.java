@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @Entity
 @Data
 public class PostImage {
-    // TODO : 이미지 타입 필드 회의 완료 후 추가
+    // TODO: 이미지 타입 필드 회의 완료 후 추가
     @Id
     private Long imageId;
 

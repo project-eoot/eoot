@@ -7,7 +7,7 @@ import lombok.Data;
 @Entity
 @Data
 public class Comment {
-    // TODO : User DTO 만들어지면 외래 키 추가
+    // TODO: User DTO 만들어지면 외래 키 추가
     @Id @GeneratedValue
     private Long commentId;
 
