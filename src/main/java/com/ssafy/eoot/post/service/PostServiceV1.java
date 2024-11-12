@@ -42,10 +42,14 @@ public class PostServiceV1 {
         }
     }
 
-    // TODO: 파라미터 수정 필요 시 수정
-    @Transactional
+    // TODO: 마지막 페이지인지 검사 로직 추가하기
     public Page<Post> recentPost(int pageNum) {
         return postRepository.findAll(PageRequest.of(20*(pageNum-1), 20*pageNum, Sort.by(Sort.Order.desc("updatedAt"))));
+    }
+
+    public Post detailPost(Long postId) {
+        return postRepository.findById(postId)
+                .orElseThrow(() -> new PostNotFoundException());
     }
 
     // TODO: User 클래스 완성 시 .getId() -> .getUserId()로 수정

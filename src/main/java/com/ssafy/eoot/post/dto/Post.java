@@ -1,6 +1,7 @@
 package com.ssafy.eoot.post.dto;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -12,13 +13,14 @@ import java.util.List;
 @Entity
 @Data
 public class Post {
-    // TODO: Member DTO 생성 시 외래 키 필드 추가
+    // TODO: User DTO 생성 시 외래 키 필드 추가
     @Id @GeneratedValue
     @Column(name = "post_id")
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id")
+    @NotBlank
     private PostLocation postLocation;
 
     @NotBlank
@@ -44,7 +46,7 @@ public class Post {
     private List<Comment> comments = new ArrayList<>();
 
     @OneToMany(mappedBy = "post")
-    @NotNull
+    @Min(1)
     private List<Tag> tags = new ArrayList<>();
 
     @OneToMany(mappedBy = "post")
