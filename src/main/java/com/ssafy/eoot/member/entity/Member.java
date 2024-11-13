@@ -39,4 +39,6 @@ public class Member {
 
     @Column(nullable = false)
     private Timestamp updatedAt;
+
+    private String lastLoginType;
 }
