@@ -1,4 +1,4 @@
-package com.ssafy.eoot.util;
+package com.ssafy.eoot.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -31,7 +31,7 @@ public class JWTUtil {
                 .parseClaimsJws(token)
                 .getBody();
 
-        return claims.get("username", String.class);
+        return claims.get("memberName", String.class);
     }
 
     // 권한 추출
@@ -71,13 +71,13 @@ public class JWTUtil {
     }
 
     // JWT 발급
-    public String createJwt(String category, String username, String role, Long expireMs) {
+    public String createJwt(String category, String memberName, String role, Long expireMs) {
         return Jwts.builder()
                 .claim("category", category)
-                .claim("username", username)
+                .claim("memberName", memberName)
                 .claim("role", role)
-                .issuedAt(new Date())  // 현재 시간으로 발행 시간 설정
-                .expiration(new Date(System.currentTimeMillis() + expireMs))  // 만료 시간 설정
+                .setIssuedAt(new Date())  // 현재 시간으로 발행 시간 설정
+                .setExpiration(new Date(System.currentTimeMillis() + expireMs))  // 만료 시간 설정
                 .signWith(secretKey, SignatureAlgorithm.HS256)  // 서명 알고리즘 명시적으로 설정
                 .compact();  // JWT 토큰 생성
     }
